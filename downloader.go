@@ -234,9 +234,8 @@ func downloadToFile(urlId int, filename string) {
 }
 
 func main() {
-	usage := "用法: " + os.Args[0] + " [-f] [-o filename] 直播间号"
+	usage := "用法: " + os.Args[0] + " [-o filename] 直播间号"
 	filename := flag.String("o", "out.mp4", "输出文件名称")
-	force := flag.Bool("f", false, "是否覆盖文件")
 
 	d, _ := time.ParseDuration("1s")
 	http.DefaultClient.Timeout = d
@@ -257,7 +256,7 @@ func main() {
 	}
 
 	_, err = os.Stat(*filename)
-	if err == nil && !*force {
+	if err == nil {
 		fmt.Printf("文件[%v]已存在\n", *filename)
 		os.Exit(1)
 	} else {
