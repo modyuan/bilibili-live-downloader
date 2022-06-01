@@ -8,3 +8,6 @@
   -o string
     	输出文件名称 (default "out.mp4")
 ```
+
+
+由于bilibili API变动，这个下载方式已经失效。推荐可用工具 [https://github.com/SeaHOH/ykdl](https://github.com/SeaHOH/ykdl)
